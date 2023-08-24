@@ -1,0 +1,57 @@
+<mat-toolbar color="primary" style="display: flex; justify-content: center; align-items: center;"> Controle de Ração</mat-toolbar>
+  
+<table mat-table [dataSource]="racoes" class="mat-elevation-z8 demo-table">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id-column">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let racao"> {{racao.id}} </td>
+    </ng-container>
+  
+    <!-- Nome Column -->
+    <ng-container matColumnDef="nome-column">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let racao"> {{racao.nome}} </td>
+    </ng-container>
+  
+    <!-- Marca Column -->
+    <ng-container matColumnDef="marca-column">
+        <th mat-header-cell *matHeaderCellDef> Marca </th>
+        <td mat-cell *matCellDef="let racao"> {{racao.marca}} </td>
+    </ng-container>
+
+    <!-- Preco Column -->
+    <ng-container matColumnDef="preco-column">
+        <th mat-header-cell *matHeaderCellDef> Preço </th>
+        <td mat-cell *matCellDef="let racao"> {{"R$" + racao.preco}} </td>
+    </ng-container>
+
+    <!-- Estoque Column -->
+    <ng-container matColumnDef="estoque-column">
+        <th mat-header-cell *matHeaderCellDef> Estoque </th>
+        <td mat-cell *matCellDef="let racao"> {{racao.estoque}} </td>
+    </ng-container>
+
+    <!-- Quantida de quilos Column -->
+    <ng-container matColumnDef="quantidadeQuilos-column">
+        <th mat-header-cell *matHeaderCellDef> Quantida de quilos </th>
+        <td mat-cell *matCellDef="let racao"> {{racao.quantidadeQuilos}} </td>
+    </ng-container>
+
+    <!-- Sabor Column -->
+    <ng-container matColumnDef="sabor-column">
+        <th mat-header-cell *matHeaderCellDef> Sabor </th>
+        <td mat-cell *matCellDef="let racao"> {{racao.sabor}} </td>
+    </ng-container>
+    
+    <!-- animal Column -->
+    <ng-container matColumnDef="animal-column">
+        <th mat-header-cell *matHeaderCellDef> Animal </th>
+        <td mat-cell *matCellDef="let racao"> {{racao.animal}} </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: tableColumns;"></tr>
+  </table>
+  <br>
+
+<button mat-raised-button color="primary" routerLink="/racoes/new" style="display: block; margin: 0 auto;">Nova Ração</button>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Ração</title>
+</head>
+<body>
+    <div class="form-container">
+        <mat-toolbar color="primary">
+            Cadastro de Ração
+        </mat-toolbar>
+
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="fill">
+                <mat-label>Nome</mat-label>
+                <input matInput type="text" formControlName="nome"/>
+                <mat-error *ngIf="formGroup.get('nome') &&
+                        formGroup.get('nome')?.invalid &&
+                        formGroup.get('nome')?.touched">
+                    Nome é obrigatório.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Marca</mat-label>
+                <input matInput type="text" formControlName="marca"/>
+                <mat-error *ngIf="formGroup.get('marca') &&
+                        formGroup.get('marca')?.invalid &&
+                        formGroup.get('marca')?.touched">
+                    Marca é obrigatório.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Preço</mat-label>
+                <input matInput type="text" formControlName="preco"/>
+                <mat-error *ngIf="formGroup.get('preco') &&
+                        formGroup.get('preco')?.invalid &&
+                        formGroup.get('preco')?.touched">
+                    Preço é obrigatório.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Estoque</mat-label>
+                <input matInput type="text" formControlName="estoque"/>
+                <mat-error *ngIf="formGroup.get('estoque') &&
+                        formGroup.get('estoque')?.invalid &&
+                        formGroup.get('estoque')?.touched">
+                    Estoque é obrigatório.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Quantida de quilos</mat-label>
+                <input matInput type="text" formControlName="quantidadeQuilos"/>
+                <mat-error *ngIf="formGroup.get('quantidadeQuilos') &&
+                        formGroup.get('quantidadeQuilos')?.invalid &&
+                        formGroup.get('quantidadeQuilos')?.touched">
+                    Quantida de quilos é obrigatório.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Sabor</mat-label>
+                <input matInput type="text" formControlName="sabor"/>
+                <mat-error *ngIf="formGroup.get('sabor') &&
+                        formGroup.get('sabor')?.invalid &&
+                        formGroup.get('sabor')?.touched">
+                    Sabor é obrigatório.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Animal</mat-label>
+                <input matInput type="text" formControlName="animal"/>
+                <mat-error *ngIf="formGroup.get('animal') &&
+                        formGroup.get('animal')?.invalid &&
+                        formGroup.get('animal')?.touched">
+                    Animal é obrigatório.
+                </mat-error>
+            </mat-form-field>
+            <br> 
+            <button mat-raised-button color="primary" 
+                type="submit"[disabled]="formGroup.invalid">
+                Salvar
+            </button>
+        
+        </form>
+    </div>
+</body>
+</html>
